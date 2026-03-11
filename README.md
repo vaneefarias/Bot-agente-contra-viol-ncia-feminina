@@ -1,4 +1,4 @@
-# Projeto Sentinela: Apoio à Mulher 💜
+# Projeto Sentinela: Apoio à Mulher
 
 ![Static Badge](https://img.shields.io/badge/viol%C3%AAncia-red)
 ![Static Badge](https://img.shields.io/badge/feminicidio-purple)
@@ -10,3 +10,10 @@
 
 ## 📖 Sobre o Projeto
 Este é um agente inteligente desenvolvido para auxiliar mulheres em situação de vulnerabilidade, ajudando na identificação de abusos, coleta de provas e estruturação de denúncias baseadas na Lei Maria da Penha.
+
+
+## 📂 Estrutura do Projeto
+
+* [Fase 1: Pesquisa e Curadoria](./fase_1_pesquisa/) - Documentação legal e contatos.
+* [Fase 2: Diagnóstico com IA](./fase_2_diagnostico/) - Código de análise de prints.
+* [Fase 3: Assistente de Ação](./fase_3_acao/) - Gerador de relatórios para denúncia.
