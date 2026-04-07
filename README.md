@@ -42,3 +42,67 @@ Este é um agente inteligente desenvolvido para auxiliar mulheres em situação 
 * **[RNF05] Anonimato Opcional:** O sistema deve permitir o uso das funções de orientação sem a obrigatoriedade de cadastro nominal imediato.
 * **[RNF06] Confiabilidade do Alerta:** O sistema de notificação de emergência (disparado via palavra-chave) deve garantir o envio da mensagem em até **10 segundos**.
 * **[RNF07] Ofuscação de Presença:** O aplicativo não deve exibir notificações com conteúdo explícito na tela de bloqueio, garantindo discrição total perante terceiros.
+
+---
+
+## Diagrama de uso
+```mermaid
+graph TD
+    %% Definição dos Atores com ícones genéricos
+    Usuaria[fa:fa-user Usuária]
+    IA[fa:fa-robot Sistema de IA - LLM]
+    SMS[fa:fa-comment Serviço de Mensageria]
+
+    subgraph "Agente de Apoio Feminino (Fronteira do Sistema)"
+        UC1((Relatar incidente/Dúvida))
+        UC2((Realizar Triagem de Violência))
+        UC3((Gerar Rascunho de Denúncia))
+        UC4((Acionar Emergência - Palavra-chave))
+        UC5((Consultar Unidades de Apoio))
+        UC6((Configurar Camuflagem - Disfarce))
+        UC7((Gerenciar Histórico Seguro))
+    end
+
+    %% Relacionamentos da Usuária com o Sistema
+    Usuaria --> UC1
+    Usuaria --> UC3
+    Usuaria --> UC4
+    Usuaria --> UC5
+    Usuaria --> UC6
+    Usuaria --> UC7
+
+    %% Lógica Interna e Sistemas Externos
+    UC1 -.->|include| UC2
+    UC2 --> IA
+    UC3 --> IA
+    UC4 --> SMS
+```
+---
+## Diagrama de Sequência (em andamento)
+```mermaid
+sequenceDiagram
+    autonumber
+    actor U as Usuária
+    participant F as Front-end (App)
+    participant B as Back-end (API)
+    participant IA as Sistema de IA (LLM)
+    participant SMS as API de Mensageria
+
+    U->>F: Digita mensagem no chat
+    F->>B: Envia JSON com o texto
+    
+    Note over B: Validação de Segurança
+    B->>B: Verifica se contém "Palavra-Chave"
+
+    alt Palavra-Chave Detectada
+        B->>SMS: Solicita envio de alerta (Emergência!)
+        SMS-->>B: Status: Sucesso (200 OK)
+        B->>F: Retorna comando de "Interface Neutra"
+        F-->>U: Exibe tela disfarçada (ex: Calculadora)
+    else Fluxo Normal
+        B->>IA: Envia prompt para análise de relato
+        IA-->>B: Retorna classificação e acolhimento
+        B->>F: Retorna resposta formatada
+        F-->>U: Exibe resposta no chat
+    end
+```
