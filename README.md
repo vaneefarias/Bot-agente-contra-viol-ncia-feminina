@@ -106,3 +106,16 @@ sequenceDiagram
         F-->>U: Exibe resposta no chat
     end
 ```
+## Front-End
+
+<img width="1024" height="1536" alt="tela1_disfarce" src="https://github.com/user-attachments/assets/8efe4072-2303-4602-bb5a-d0e3c2c52d53" />
+
+
+<img width="1024" height="1536" alt="tela2_login" src="https://github.com/user-attachments/assets/8e75cea9-f594-4254-b996-87a4eb0e0111" />
+
+<img width="1024" height="1536" alt="tela3_hub" src="https://github.com/user-attachments/assets/dd3cf1ec-1f4d-436f-9e02-0112664fc6be" />
+
+<img width="1024" height="1536" alt="tela4_panico" src="https://github.com/user-attachments/assets/36745994-3bec-4d12-a195-091b883beff7" />
+
+
+
